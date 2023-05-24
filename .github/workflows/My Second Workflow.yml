@@ -27,8 +27,14 @@ jobs:
 
       # Runs a single command using the runners shell    
       # Clear workspace
-      - name: Clear workspace
-        run: kubectl delete pods, services, deployments --all -n labo03
+      - name: Delete Deployments
+        run: kubectl delete deployments --all -n labo03
+
+      - name: Delete Services
+        run: kubectl delete services --all -n labo03
+        
+      - name: Delete Pods  
+        run: kubectl delete pods --all -n labo03
       
       - name: Delete namespace
         run: kubectl delete namespace labo03
