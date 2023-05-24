@@ -42,11 +42,15 @@ jobs:
       # Remove old Docker image
       - name: Remove old Docker image
         run: docker rmi richardvanraeshowest/hello-world-nginx:v2
-        
+
       # Pull a Docker image
       - name: Pull Docker image
         run: docker pull richardvanraeshowest/hello-world-nginx:v2
       
        # A KubeCTL action which will apply a Kubernetes object to your cluster
       - name: Run KubeCtl
-        run: kubectl create -f deployment.yml  
+        run: kubectl create -f deployment.yml
+
+        # A KubeCTL action which will check for the pods in your cluster
+      - name: Check Pods
+        run: kubectl get pods -n labo03
