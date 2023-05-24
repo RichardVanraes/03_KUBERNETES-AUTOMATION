@@ -39,8 +39,10 @@ jobs:
       - name: Build Docker image
         run: docker build -t richardvanraeshowest/hello-world-nginx:v2 .
 
+      # Push the Docker image to Docker Hub
       - name: Push Docker image
         run: docker push richardvanraeshowest/hello-world-nginx:v2
       
-      - name: Run the Docker container
-        run: docker run -d -p 80:80 richardvanraeshowest/hello-world-nginx:v2
+      # # Run the Docker container -- this is for testing purposes only
+      # - name: Run the Docker container
+      #   run: docker run -d -p 80:80 richardvanraeshowest/hello-world-nginx:v2
