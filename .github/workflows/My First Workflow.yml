@@ -40,7 +40,7 @@ jobs:
         run: docker build -t richardvanraes/hello-world-nginx:v2 .
 
       - name: Push Docker image
-        run: docker push richardvanraes/hello-world-nginx:v2
+        run: docker push richardvanraeshowest/hello-world-nginx:v2
       
       - name: Run the Docker container
         run: docker run -d -p 80:80 richardvanraes/hello-world-nginx:v2
