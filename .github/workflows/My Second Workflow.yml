@@ -39,6 +39,10 @@ jobs:
       - name: Delete namespace
         run: kubectl delete namespace labo03
 
+      # Remove old Docker image
+      - name: Remove old Docker image
+        run: docker rmi richardvanraeshowest/hello-world-nginx:v2
+        
       # Pull a Docker image
       - name: Pull Docker image
         run: docker pull richardvanraeshowest/hello-world-nginx:v2
